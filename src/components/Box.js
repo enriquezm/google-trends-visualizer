@@ -9,19 +9,26 @@ class Box extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: "Hello, World!",
-            bgColor: "salmon"
+            text: this.props.text,
+            bgColor: "salmon",
+            animatedText: ""
         }
         this.typeWriter = this.typeWriter.bind(this);
     }
     typeWriter() {
+        // Take text from props
+        // turn into array
+        // interate through array and update animatedText state on a timer
         const textArray = this.state.text.split("");
-        console.log(textArray);
-        return <p>{textArray[0]}</p>;
+        for(let i = 0; i < textArray.length; i++) {
+            this.setState({
+                animatedText: this.state.animatedText + textArray[i]
+            })
+        }
     }
     render() {
         return (
-            <div className={this.state.bgColor}>{ this.typeWriter() }</div>
+            <div className={this.state.bgColor}>{ this.state.animatedText }</div>
         )
     }
 }

@@ -1,3 +1,24 @@
+/* Box Styling */
+.box {
+    width: 33%;
+    padding: 5%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+}
+/* bg colors */
 .salmon {
     background-color: #f6546a;
+}
+.purple {
+    background-color: #7453E0;
+}
+.pink {
+    background-color: #EA3FFA;
+}
+.indigo {
+    background-color: #224EBB;
+}
+.green {
+    background-color: #0DDA9F;
 }

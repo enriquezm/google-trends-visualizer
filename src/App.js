@@ -9,6 +9,12 @@ import './App.css';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      gridSize: 5
+    }
+  }
   render() {
     return (
       <div className="App">

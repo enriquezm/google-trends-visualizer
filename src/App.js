@@ -17,8 +17,10 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Box text="This is a test"/>
+      <div className="grid">
+        <Box bgColor="salmon" text="Cat"/>
+        <Box bgColor="purple" text="Cat"/>
+        <Box bgColor="green" text="Cat"/>
       </div>
     );
   }

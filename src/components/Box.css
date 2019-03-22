@@ -1,24 +1,20 @@
 /* Box Styling */
 .box {
-    width: 33%;
-    padding: 5%;
+    padding: 10%;
     color: white;
     display: flex;
     justify-content: flex-start;
 }
 /* bg colors */
-.salmon {
-    background-color: #f6546a;
+.yellow {
+    background-color: #FABB06;
 }
-.purple {
-    background-color: #7453E0;
+.red {
+    background-color: #EA4335;
 }
-.pink {
-    background-color: #EA3FFA;
-}
-.indigo {
-    background-color: #224EBB;
+.blue {
+    background-color: #4285F4;
 }
 .green {
-    background-color: #0DDA9F;
+    background-color: #34A752;
 }

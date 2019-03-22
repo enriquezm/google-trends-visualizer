@@ -10,25 +10,14 @@ class Box extends React.Component {
         super(props);
         this.state = {
             text: this.props.text,
-            bgColor: "salmon",
-            animatedText: ""
-        }
-        this.typeWriter = this.typeWriter.bind(this);
-    }
-    typeWriter() {
-        // Take text from props
-        // turn into array
-        // interate through array and update animatedText state on a timer
-        const textArray = this.state.text.split("");
-        for(let i = 0; i < textArray.length; i++) {
-            this.setState({
-                animatedText: this.state.animatedText + textArray[i]
-            })
+            bgColor: this.props.bgColor,
         }
     }
     render() {
         return (
-            <div className={this.state.bgColor}>{ this.state.animatedText }</div>
+            <div className={`box ${this.state.bgColor}`}>
+                <h1>{ this.state.text }</h1>
+            </div>
         )
     }
 }

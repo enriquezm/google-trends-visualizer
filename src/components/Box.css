@@ -1,9 +1,7 @@
 /* Box Styling */
-.box {
-    padding: 10%;
+.animated-text {
     color: white;
-    display: flex;
-    justify-content: flex-start;
+    animation: fadeIn 2s;
 }
 /* bg colors */
 .yellow {
@@ -17,4 +15,13 @@
 }
 .green {
     background-color: #34A752;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

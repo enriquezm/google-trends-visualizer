@@ -2,12 +2,11 @@
 // App controls reponsiveness.
 // App controlls grid size.
 import React, { Component } from 'react';
-import Box from './components/Box';
-import logo from './logo.svg';
+import Header from './components/Header';
+import Grid from './components/Grid';
 import './App.css';
 import AnimalListData from './animal_names.json';
 import Colors from './colors.json';
-
 
 
 class App extends Component {
@@ -17,33 +16,38 @@ class App extends Component {
       gridSize: 25, //default requirement
       animals: []
     }
-    this.createZoo = this.createZoo.bind(this);
   }
   componentDidMount() {
-    this.createZoo();
+    this.randomizeAnimals();
   }
-  createZoo(){
-    // Creates a concatenated string of animal box components based on grid size
-    const animalArray = [];
+  randomizeAnimals() {
+    const animals = [];
     for(let i = 0; i < this.state.gridSize; i++) {
-      const animalNumber = Math.floor((Math.random() * this.state.gridSize) + 1); // number between 1 and gridSize (not inclusive)
-      const colorNumber = Math.floor((Math.random() * 4) + 0);
-      animalArray.push(
-        <Box bgColor={Colors[colorNumber]} text={AnimalListData[animalNumber]}/>
+      const randomNum = this.generateRandomNum(0, this.state.gridSize);
+      animals.push(
+        AnimalListData[randomNum]
       );
+      this.setState({
+        animals: animals
+      });
     }
-    console.log(animalArray);
-    this.setState({
-      animals: animalArray
-    });
   }
-    
+  generateRandomNum(min, max) {
+    return Math.floor((Math.random() * max) + min);
+  }
+  generateRandomColor() {
+    const randomNum = Math.floor((Math.random() * 4) + 0);
+    return Colors[randomNum];
+  }
   render() {
     return (
-      <div className="grid">
-        {
-          this.state.animals.map((animal) => animal)
-        }
+      <div>
+        <Header />
+        <Grid 
+          animals={this.state.animals} 
+          size={this.state.gridSize} 
+          bgColor={this.generateRandomColor}
+        />
       </div>
     );
   }

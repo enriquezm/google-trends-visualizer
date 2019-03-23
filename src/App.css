@@ -1,24 +1,12 @@
-.grid {
-  display: grid;
-  height: 100%;
-  grid-gap: 0px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  justify-content: start;
-  align-content: space-evenly;
-}
-.grid h1 {
-  overflow: hidden;
-  border-right: 0.5px solid white;
-  white-space: nowrap;
-  letter-spacing: 0.75;
-  animation:
-    typing 3s steps(25, end),
-    blink-caret .75s step-end infinite;
-}
-
 /* Animations */
 @keyframes typing {
-  from { width: 0 }
+  from { 
+    width: 0;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
   to { width: 100% }
 }
 @keyframes blink-caret {

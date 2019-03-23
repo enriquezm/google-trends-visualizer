@@ -1,6 +1,6 @@
 // Box controls background color
 // Box conrols text generator since Box has no other use.
-// Box controls its entry/exit animation
+// Box controls its entry/exit animation (use interval to trigger entry animation)
 // Box controls its text animation
 import React from 'react';
 import styled from 'styled-components';

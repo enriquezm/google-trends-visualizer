@@ -1,6 +1,3 @@
-// App controls where all box components are organized.
-// App controls reponsiveness.
-// App controlls grid size.
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Grid from './components/Grid';
@@ -20,6 +17,10 @@ class App extends Component {
   componentDidMount() {
     this.randomizeAnimals();
   }
+  /**
+  * randomizeAnimals() Creates a new array by randomly
+  * selecting animals from AnimalListData
+  */
   randomizeAnimals() {
     const animals = [];
     for(let i = 0; i < this.state.gridSize; i++) {
@@ -32,9 +33,16 @@ class App extends Component {
       });
     }
   }
+  /**
+  * generateRandomNum() Generates a random number from
+  * min and max args provided
+  */
   generateRandomNum(min, max) {
     return Math.floor((Math.random() * max) + min);
   }
+  /**
+  * generateRandomColor() Selects a random color from Colors
+  */
   generateRandomColor() {
     const randomNum = Math.floor((Math.random() * 4) + 0);
     return Colors[randomNum];

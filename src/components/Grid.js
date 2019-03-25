@@ -14,9 +14,10 @@ const Container = styled.div`
 const Grid = props => (
     <Container>
         {
-        props.animals.map((animal, index) => 
-            <Box size={props.size} key={index} bgColor={props.bgColor()} text={animal} />
-        )
+            // TODO: Box needs to be assigned a timer with a random countdown
+            props.animals.map((animal, index) => 
+                <Box size={props.size} key={index} bgColor={props.bgColor()} text={animal} />
+            )
         }
     </Container>
 )

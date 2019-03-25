@@ -2,6 +2,8 @@
 
 Project meant to mimic [Google Trends Visualizer](https://trends.google.com/trends/hottrends/visualize)
 
+![Application screenshot](./screenshot.png)
+
 ## To view project
 1. Clone
 
